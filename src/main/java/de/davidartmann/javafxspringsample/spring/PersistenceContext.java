@@ -55,12 +55,5 @@ public class PersistenceContext {
 		jpaTransactionManager.setEntityManagerFactory(entityManagerFactory);
 		return jpaTransactionManager;
 	}
-	
-	/*
-	@Bean
-	PlatformTransactionManager platformTransactionManager(Environment env) {
-		return new DataSourceTransactionManager(dataSource(env));
-	}
-	*/
 
 }

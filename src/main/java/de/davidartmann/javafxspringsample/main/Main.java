@@ -1,5 +1,7 @@
 package de.davidartmann.javafxspringsample.main;
 	
+import java.io.File;
+
 import org.springframework.beans.factory.BeanCreationException;
 
 import de.davidartmann.javafxspringsample.spring.SpringFxmlLoader;
@@ -27,9 +29,11 @@ public class Main extends Application {
 				// TODO: show little message that application is already opened.
 			}
 			
-			AnchorPane root = springFxmlLoader.load(getClass().getResource("../view/fxml/RootLayout.fxml"));
+			System.out.println(new File("/views/RootLayout.fxml").exists());
+			
+			AnchorPane root = springFxmlLoader.load(getClass().getResource("/views/RootLayout.fxml"));
 			Scene scene = new Scene(root);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("/css/application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
 			
